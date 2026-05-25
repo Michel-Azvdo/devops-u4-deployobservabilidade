@@ -10,16 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Clonar repositorio
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Configurar Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Instalar dependencias
-        run: npm install
+      - run: npm install
 
-      - name: Rodar testes
-        run: npx jest
+      - run: npm install jest supertest
+
+      - run: npx jest
