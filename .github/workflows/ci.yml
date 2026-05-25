@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: pipeline CI
 
 on:
   push:
@@ -7,21 +7,19 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Clonar repositório
+      - name: Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: Configurar Node.js
+      - name: Configurar Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Instalar dependências
+      - name: Instalar dependencias
         run: npm install
 
       - name: Rodar testes
-        run: npm test
+        run: npx jest
